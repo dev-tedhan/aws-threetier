@@ -49,7 +49,7 @@ public class KaKaoService {
 //            파라미터를 구성한다(ref. kakao rest api login documentation)
             stringBuilder.append("grant_type=authorization_code");
             stringBuilder.append("&client_id=6c9664c00ac5573fa3d8f1caf80e67f3");
-            stringBuilder.append("&redirect_uri=http://localhost:10000/kakao/login");
+            stringBuilder.append("&redirect_uri=http://3.36.120.196/kakao/login");
             stringBuilder.append("&code=").append(code);
 
 //            등록한 URI로 파라미터를 전송하기 위해서는
@@ -123,7 +123,6 @@ public class KaKaoService {
                 }
 
                 bufferedReader.close();
-                log.info("{}.................................", result);
 
 //                내가 필요한 정보를 쏙쏙 가져온다.
                 JsonElement jsonElement = JsonParser.parseString(result);
@@ -144,7 +143,6 @@ public class KaKaoService {
 
 //                카카오 정보가 우리 DB에 없으면,
                 if(foundMember.isEmpty()){
-                    log.info("들어옴1");
 //                    최초 로그인
 //                    1) 추가 정보 입력 페이지로 이동
                     return kakaoInfo;
@@ -153,7 +151,6 @@ public class KaKaoService {
 
                 }else{ // 우리 DB에 있네?
 //                    기존 회원
-                    log.info("들어옴2");
                     return foundMember.get();
                 }
             }
