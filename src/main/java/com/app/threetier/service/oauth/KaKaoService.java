@@ -143,6 +143,7 @@ public class KaKaoService {
 
 //                카카오 정보가 우리 DB에 없으면,
                 if(foundMember.isEmpty()){
+                    log.info("들어옴1");
 //                    최초 로그인
 //                    1) 추가 정보 입력 페이지로 이동
                     return kakaoInfo;
@@ -151,6 +152,7 @@ public class KaKaoService {
 
                 }else{ // 우리 DB에 있네?
 //                    기존 회원
+                    log.info("들어옴2");
                     return foundMember.get();
                 }
             }
