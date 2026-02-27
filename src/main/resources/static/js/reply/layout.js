@@ -3,6 +3,7 @@ const replyLayout = (() => {
     const showList = ({replies, criteria}) => {
         const replyContainer = document.getElementById("replies");
         let text = ``;
+        if(!replies) {return;}
         replies.forEach((reply) => {
             text += `
                 <div class="reply reply-wrap${reply.id}">
