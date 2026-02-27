@@ -9,4 +9,5 @@ create table tbl_member(
 );
 
 select * from tbl_member;
+select * from tbl_oauth;
 
