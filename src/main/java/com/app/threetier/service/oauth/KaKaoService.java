@@ -123,6 +123,7 @@ public class KaKaoService {
                 }
 
                 bufferedReader.close();
+                log.info("{}.................................", result);
 
 //                내가 필요한 정보를 쏙쏙 가져온다.
                 JsonElement jsonElement = JsonParser.parseString(result);
